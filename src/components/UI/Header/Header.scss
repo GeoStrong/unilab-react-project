@@ -1,0 +1,43 @@
+.header {
+  color: $primary;
+  @include flex(row, space-between);
+  font-family: Montserrat;
+  font-weight: 700;
+
+  &__style {
+    margin: 0;
+    color: $primary;
+    font-size: getSize(40);
+  }
+
+  &-right {
+    @include flex(row, space-between);
+    gap: 5rem;
+
+    &__account {
+      @include flex(row, space-between);
+      border-left: 1px solid $quaternary;
+    }
+
+    &__name {
+      margin: 0;
+      color: $primary;
+      font-size: getSize(40);
+      font-weight: 500;
+    }
+
+    &__profile {
+      width: getSize(80);
+      height: getSize(80);
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: #fff;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
