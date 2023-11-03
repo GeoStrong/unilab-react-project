@@ -1,5 +1,7 @@
 $primary: #fff;
 $secondary: #4980c0;
+$tertiary: #000;
+$quaternary: #e6ebff;
 
 @function getSize($size) {
   @return calc($size / 11.25 * 1rem);
