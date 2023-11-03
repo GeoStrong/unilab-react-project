@@ -1,9 +1,8 @@
 .landing {
-  width: 100vw;
-  height: 100vh;
+  @include fullScreen;
   @include flex(column);
   gap: getSize(90);
-  background-image: url(../../../assets/img/stars.svg);
+  background-image: url(../../assets/img/stars.svg);
 
   &__heading {
     margin: 0;
