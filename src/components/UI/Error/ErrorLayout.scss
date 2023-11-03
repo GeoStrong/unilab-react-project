@@ -1,0 +1,14 @@
+.error-layout {
+  @include flex(column);
+  height: 100vh;
+  color: $primary;
+
+  &__text {
+    margin: 0;
+    font-size: 3rem;
+  }
+
+  &__description {
+    font-size: 1.5rem;
+  }
+}
