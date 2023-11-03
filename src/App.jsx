@@ -1,11 +1,29 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Landing from './components/UI/Landing/Landing';
+import RouteLayout from './pages/Route';
+import RegistrationPage from './pages/Authorization';
+import Landing from './components/Landing/Landing';
+import ErrorPage from './pages/Error';
+import FormPage from './pages/Form';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Landing />,
-    children: [],
+    element: <RouteLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <Landing />,
+      },
+      {
+        path: 'auth',
+        element: <RegistrationPage />,
+      },
+      {
+        path: 'form',
+        element: <FormPage />,
+      },
+    ],
   },
 ]);
 const App = () => <RouterProvider router={router} />;
