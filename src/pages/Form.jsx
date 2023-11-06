@@ -1,4 +1,4 @@
-import FormLayout from '../components/UI/Form/FormLayout';
+import FormLayout from '../components/Form/FormLayout';
 
 const FormPage = () => {
   return <FormLayout />;
