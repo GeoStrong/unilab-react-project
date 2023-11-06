@@ -7,15 +7,17 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-left">
-        <h2 className="header-left__heading header__style">Form</h2>
+        <Link to="/form" className="header-left__heading">
+          Form
+        </Link>
+        <Link to="/api" className="header-left__link">
+          API
+        </Link>
       </div>
       <div className="header-right">
-        <Link className="header-right__link header__style">API</Link>
-        <div className="header-right__account">
-          <h3 className="header-right__name">{account.name}</h3>
-          <div className="header-right__profile">
-            <img src={account.profile} alt="profile" />
-          </div>
+        <h3 className="header-right__name">{account.name}</h3>
+        <div className="header-right__profile">
+          <img src={account.profile} alt="profile" />
         </div>
       </div>
     </header>

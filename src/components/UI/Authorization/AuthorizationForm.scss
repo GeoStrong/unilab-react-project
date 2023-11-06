@@ -1,5 +1,5 @@
 .authorization {
-  @include fullScreen;
+  @include fullSize;
   @include flex;
 
   &-card {
@@ -12,14 +12,12 @@
     font-weight: 400;
 
     &__heading {
-      margin: 0;
       color: $tertiary;
       font-size: getSize(64);
       font-weight: 400;
     }
 
     &__description {
-      margin: 0;
       color: $tertiary;
       font-size: getSize(36);
     }

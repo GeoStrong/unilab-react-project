@@ -1,9 +1,10 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import RouteLayout from './pages/Route';
 import RegistrationPage from './pages/Authorization';
-import Landing from './components/Landing/Landing';
+import Landing from './components/UI/Landing/Landing';
 import ErrorPage from './pages/Error';
 import FormPage from './pages/Form';
+import ApiLayout, { loader } from './components/API/APILayout';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
       {
         path: 'form',
         element: <FormPage />,
+      },
+      {
+        path: 'api',
+        element: <ApiLayout />,
+        loader: loader,
       },
     ],
   },

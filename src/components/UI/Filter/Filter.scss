@@ -1,0 +1,18 @@
+.filter-button {
+  padding: getSize(10) getSize(60);
+  background: $primary url(../../../assets/img/filter.svg) no-repeat 1rem;
+  color: $tertiary;
+  font-family: Montserrat;
+  font-size: getSize(18);
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+.filter-input {
+  background: $primary url(../../../assets/img/search.svg) no-repeat 1rem;
+  padding: getSize(10) getSize(50);
+  font-family: Montserrat;
+  font-size: getSize(18);
+  border-radius: 8px;
+  border: none;
+}

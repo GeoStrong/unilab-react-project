@@ -1,26 +1,35 @@
 .header {
-  color: $primary;
   @include flex(row, space-between);
   font-family: Montserrat;
   font-weight: 700;
+  color: $primary;
+  border-bottom: 1px solid $quaternary;
 
-  &__style {
-    margin: 0;
+  &-left {
+    padding: getSize(20) getSize(60);
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: $primary;
     font-size: getSize(40);
+
+    &__heading {
+      font-size: inherit;
+    }
+
+    &__link {
+      font-size: inherit;
+    }
   }
 
   &-right {
+    width: 20%;
     @include flex(row, space-between);
-    gap: 5rem;
-
-    &__account {
-      @include flex(row, space-between);
-      border-left: 1px solid $quaternary;
-    }
+    padding: getSize(20) getSize(60);
+    border-left: 1px solid $quaternary;
 
     &__name {
-      margin: 0;
       color: $primary;
       font-size: getSize(40);
       font-weight: 500;
@@ -32,6 +41,7 @@
       border-radius: 50%;
       overflow: hidden;
       background-color: #fff;
+      cursor: pointer;
 
       img {
         width: 100%;
