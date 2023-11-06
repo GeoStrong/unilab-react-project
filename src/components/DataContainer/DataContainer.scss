@@ -1,0 +1,57 @@
+.main-data {
+  @include flex(column);
+  margin-top: getSize(25);
+  width: 100vw;
+  position: relative;
+
+  .data-filter {
+    display: flex;
+    width: 60vw;
+    justify-content: space-between;
+    margin-bottom: getSize(25);
+  }
+
+  .data-container {
+    max-width: 60vw;
+    height: 60vh;
+    margin-bottom: getSize(70);
+    overflow: scroll;
+    background-color: $primary;
+    border-radius: 10px;
+
+    &__row {
+      display: grid;
+      grid-template-columns: repeat(9, 230px);
+      height: getSize(80);
+      align-items: center;
+
+      &:first-child {
+        width: 112vw;
+        border-bottom: 1px solid $secondary;
+        position: relative;
+      }
+
+      &:nth-child(2n) {
+        width: 112vw;
+        background-color: #f6f6f6;
+        position: relative;
+      }
+    }
+
+    &__value {
+      padding: getSize(25) getSize(40);
+      color: $text-on-white;
+      text-align: center;
+      font-size: getSize(16);
+      font-weight: 700;
+      line-height: 132.99%;
+
+      &--item {
+        font-family: Montserrat;
+        color: $tertiary;
+        font-size: getSize(14);
+        font-weight: 400;
+      }
+    }
+  }
+}

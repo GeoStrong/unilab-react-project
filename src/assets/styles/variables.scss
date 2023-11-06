@@ -2,6 +2,7 @@ $primary: #fff;
 $secondary: #4980c0;
 $tertiary: #000;
 $quaternary: #e6ebff;
+$text-on-white: #353535;
 
 @function getSize($size) {
   @return calc($size / 11.25 * 1rem);

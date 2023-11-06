@@ -1,0 +1,36 @@
+.pagination {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+
+    button {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__pages {
+    @include flex;
+    gap: 1rem;
+  }
+
+  &__button {
+    color: $primary;
+    font-family: Montserrat;
+    font-size: getSize(18);
+    font-weight: 400;
+  }
+
+  .active {
+    font-weight: 700;
+    text-decoration-line: underline;
+  }
+}
+.hidden {
+  display: none;
+}
