@@ -26,12 +26,14 @@
 
       &:first-child {
         width: 112vw;
+        width: $row-width;
         border-bottom: 1px solid $secondary;
         position: relative;
       }
 
       &:nth-child(2n) {
         width: 112vw;
+        width: $row-width;
         background-color: #f6f6f6;
         position: relative;
       }
