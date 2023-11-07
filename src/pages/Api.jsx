@@ -1,13 +1,11 @@
-import { json, useLoaderData, useNavigation } from 'react-router-dom';
+import { json, useLoaderData } from 'react-router-dom';
 import Header from '../components/UI/Header/Header';
 import Pagination from '../components/Pagination/Pagination';
 import useDataPage from '../components/hooks/useDataPage';
 import DataContainer from '../components/DataContainer/DataContainer';
-import { Suspense } from 'react';
 
 const ApiPage = () => {
   const apiData = useLoaderData();
-  const navigation = useNavigation();
   const { newData, dataPerPage } = useDataPage(apiData);
 
   const rowValues = Array.from(
@@ -17,14 +15,8 @@ const ApiPage = () => {
   return (
     <>
       <Header />
-      {/* <Suspense
-        fallback={
-          <p style={{ textAlign: 'center', color: 'white' }}>Loading...</p>
-        }
-      > */}
       <DataContainer dataPerPage={dataPerPage} rowValues={rowValues} />
       <Pagination data={newData} />
-      {/* </Suspense> */}
     </>
   );
 };
