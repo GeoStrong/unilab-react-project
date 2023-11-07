@@ -2,16 +2,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import Filter from '../UI/Filter/Filter';
 import './DataContainer.scss';
 import DataValue from './DataValue';
-import FilterPopup from '../FilterPopup/FilterPopup';
 import { useEffect, useState } from 'react';
 import { dataFilterActions } from '../../store/dataFilter';
 import { popupActions } from '../../store/popup';
+import FilterPopup from '../Popup/FilterPopup/FilterPopup';
+import { useLocation } from 'react-router-dom';
 
-const DataContainer = ({ data }) => {
+const DataContainer = ({ dataPerPage, rowValues }) => {
   const dispatch = useDispatch();
-  const { activePage } = useSelector((state) => state.dataFilter);
+  const location = useLocation();
   const { filterPopup } = useSelector((state) => state.popup);
   const [searchValue, setSearchValue] = useState('');
+  const locationCheck = location.pathname === '/api';
 
   const onSearchChange = (event) => {
     setSearchValue(event.target.value);
@@ -26,31 +28,30 @@ const DataContainer = ({ data }) => {
     dispatch(dataFilterActions.filterByNameHandler(searchValue));
   }, [dispatch, searchValue]);
 
-  const dataPerPage = data.filter((item) => item.page === activePage);
-
   return (
     <main className="main-data">
-      <div className="data-filter">
-        <Filter
-          searchChangeHandler={onSearchChange}
-          popupClickHandler={onPopupClick}
-        />
-        {filterPopup && <FilterPopup />}
-      </div>
-      <div className="data-container">
+      {!locationCheck && (
+        <div className="data-filter">
+          <Filter
+            searchChangeHandler={onSearchChange}
+            popupClickHandler={onPopupClick}
+          />
+          {filterPopup && <FilterPopup />}
+        </div>
+      )}
+      <div className={`data-container  ${locationCheck && 'no-scroll'}`}>
         <ul className="data-container__row">
-          <li className="data-container__value">სტუდენტის სახელი და გვარი</li>
-          <li className="data-container__value">სტატუსი</li>
-          <li className="data-container__value">სქესი</li>
-          <li className="data-container__value">ქულები</li>
-          <li className="data-container__value">პირადი ნომერი</li>
-          <li className="data-container__value">მაილი</li>
-          <li className="data-container__value">მობილურის ნომერი</li>
-          <li className="data-container__value">მისამართი</li>
-          <li className="data-container__value">დაბადების თარიღი</li>
+          {rowValues.map((value, index) => (
+            <li key={index} className="data-container__value">
+              {value}
+            </li>
+          ))}
         </ul>
         {dataPerPage.map((item) => (
-          <DataValue key={item.personId} item={item} />
+          <DataValue
+            key={item.personId ? item.personId : item.id}
+            item={item}
+          />
         ))}
       </div>
     </main>
