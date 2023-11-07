@@ -29,7 +29,8 @@ const ErrorLayout = ({ error }) => {
       <div className="error-layout">
         <h2 className="error-layout__text">{title}</h2>
         <p className="error-layout__description">{message}</p>
-        <Link to={pathname} className="error-layout__button">
+        <Link to="/" className="error-layout__button">
+          {/* <Link to={pathname} className="error-layout__button"> */}
           Go Back
         </Link>
       </div>

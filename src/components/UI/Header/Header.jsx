@@ -16,10 +16,12 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-left">
-        <Link to={`${pathname}form`} className="header-left__heading">
+        <Link to="/form" className="header-left__heading">
+          {/* <Link to={`${pathname}form`} className="header-left__heading"> */}
           Form
         </Link>
-        <Link to={`${pathname}api`} className="header-left__link">
+        <Link to="/api" className="header-left__link">
+          {/* <Link to={`${pathname}api`} className="header-left__link"> */}
           API
         </Link>
       </div>

@@ -20,7 +20,8 @@ const Landing = () => {
         <img src={logo} alt="logo" />
       </div>
       <h1 className="landing__heading">Get Started Today</h1>
-      <Link to={`${pathname}auth`} className="landing__button">
+      <Link to="/auth" className="landing__button">
+        {/* <Link to={`${pathname}auth`} className="landing__button"> */}
         Get Started
       </Link>
     </main>

@@ -31,7 +31,8 @@ const Modal = ({ overlayClickHandler }) => {
           <img src={account?.profile} alt="profile" />
         </div>
         <Link
-          to={pathname}
+          to="/"
+          // to={pathname}
           onClick={removeAccount}
           className="modal-main__button"
         >

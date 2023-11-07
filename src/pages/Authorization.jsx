@@ -33,7 +33,8 @@ const AuthorizationPage = () => {
     };
 
     window.localStorage.setItem('account', JSON.stringify(data));
-    navigate(`${pathname}form`);
+    navigate('/form');
+    // navigate(`${pathname}form`);
   };
 
   return (
