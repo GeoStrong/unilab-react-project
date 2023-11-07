@@ -1,0 +1,50 @@
+.overlay-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: fixed;
+  top: 10%;
+  left: 30%;
+  width: 40vw;
+  height: 75vh;
+  z-index: 100;
+  overflow: hidden;
+  background: $primary;
+  border-radius: 10px;
+
+  &-header {
+    padding: 4rem;
+    @include flex(row, flex-end);
+
+    &__title {
+      font-size: 3rem;
+    }
+
+    &__button {
+      width: getSize(80);
+      height: getSize(80);
+    }
+  }
+
+  &-main {
+    @include flex(column);
+    gap: 5rem;
+    @include profileImage(300);
+
+    &__name {
+      font-size: 3rem;
+      font-family: Montserrat;
+    }
+
+    &__button {
+      @include button();
+    }
+  }
+}

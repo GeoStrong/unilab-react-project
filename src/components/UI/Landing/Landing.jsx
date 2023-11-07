@@ -1,8 +1,17 @@
 import './Landing.scss';
 import logo from '../../../assets/img/logo.svg';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { popupActions } from '../../../store/popup';
 
 const Landing = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(popupActions.profilePopupHandler(false));
+  }, [dispatch]);
+
   return (
     <main className="landing">
       <div className="landing__logo">
