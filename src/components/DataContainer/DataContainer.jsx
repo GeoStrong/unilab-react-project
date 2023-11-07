@@ -13,7 +13,7 @@ const DataContainer = ({ dataPerPage, rowValues }) => {
   const location = useLocation();
   const { filterPopup } = useSelector((state) => state.popup);
   const [searchValue, setSearchValue] = useState('');
-  const locationCheck = location.pathname === '/api';
+  const locationCheck = location.pathname.includes('/api');
 
   const onSearchChange = (event) => {
     setSearchValue(event.target.value);

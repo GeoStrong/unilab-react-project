@@ -2,9 +2,11 @@ import { useNavigate } from 'react-router-dom';
 import AuthorizationForm from '../components/UI/Authorization/AuthorizationForm';
 import { useRef, useState } from 'react';
 import defaultProfile from '../assets/img/default-profile.svg';
+import usePathname from '../components/hooks/usePathname';
 
 const AuthorizationPage = () => {
   const navigate = useNavigate();
+  const { pathname } = usePathname();
   const [profile, setProfile] = useState(defaultProfile);
   const [authError, setAuthError] = useState(false);
   const nameInput = useRef();
@@ -31,7 +33,7 @@ const AuthorizationPage = () => {
     };
 
     window.localStorage.setItem('account', JSON.stringify(data));
-    navigate('/form');
+    navigate(`${pathname}form`);
   };
 
   return (

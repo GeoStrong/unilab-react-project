@@ -5,12 +5,15 @@ import { popupActions } from '../../../store/popup';
 import closeImg from '../../../assets/img/close.svg';
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import usePathname from '../../hooks/usePathname';
 
 const Overlay = ({ overlayClickHandler }) => {
   return <div className="overlay-backdrop" onClick={overlayClickHandler}></div>;
 };
 
 const Modal = ({ overlayClickHandler }) => {
+  const { pathname } = usePathname();
+
   const account = JSON.parse(window.localStorage.getItem('account'));
 
   const removeAccount = () => window.localStorage.removeItem('account');
@@ -27,7 +30,11 @@ const Modal = ({ overlayClickHandler }) => {
         <div className="modal-main__profile">
           <img src={account?.profile} alt="profile" />
         </div>
-        <Link to="/" onClick={removeAccount} className="modal-main__button">
+        <Link
+          to={pathname}
+          onClick={removeAccount}
+          className="modal-main__button"
+        >
           Sign Out
         </Link>
       </main>
