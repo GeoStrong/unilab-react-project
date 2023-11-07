@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { popupActions } from '../../../store/popup';
-import usePathname from '../../hooks/usePathname';
 
 const Landing = () => {
   const dispatch = useDispatch();
-  const { pathname } = usePathname();
 
   useEffect(() => {
     dispatch(popupActions.profilePopupHandler(false));
@@ -21,7 +19,6 @@ const Landing = () => {
       </div>
       <h1 className="landing__heading">Get Started Today</h1>
       <Link to="/auth" className="landing__button">
-        {/* <Link to={`${pathname}auth`} className="landing__button"> */}
         Get Started
       </Link>
     </main>

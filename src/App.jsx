@@ -10,13 +10,9 @@ import ErrorPage from './pages/Error';
 import FormPage from './pages/Form';
 import ApiLayout, { loader } from './pages/Api';
 
-// const basename = '/unilab-react-project';
-
 const router = createHashRouter([
-  // const router = createBrowserRouter([
   {
     path: '/',
-    // path: basename,
     element: <RouteLayout />,
     errorElement: <ErrorPage />,
     children: [
@@ -26,17 +22,14 @@ const router = createHashRouter([
       },
       {
         path: 'auth',
-        // path: `${basename}/auth`,
         element: <RegistrationPage />,
       },
       {
         path: 'form',
-        // path: `${basename}/form`,
         element: <FormPage />,
       },
       {
         path: 'api',
-        // path: `${basename}/api`,
         element: <ApiLayout />,
         loader,
       },
@@ -44,9 +37,6 @@ const router = createHashRouter([
   },
 ]);
 
-const App = () => (
-  <RouterProvider router={router}></RouterProvider>
-  // <RouterProvider router={router} basename={basename}></RouterProvider>
-);
+const App = () => <RouterProvider router={router}></RouterProvider>;
 
 export default App;

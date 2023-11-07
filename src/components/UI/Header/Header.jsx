@@ -2,11 +2,9 @@ import { Link } from 'react-router-dom';
 import './Header.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { popupActions } from '../../../store/popup';
-import usePathname from '../../hooks/usePathname';
 
 const Header = () => {
   const dispatch = useDispatch();
-  const { pathname } = usePathname();
   const { profilePopup } = useSelector((state) => state.popup);
   const account = JSON.parse(window.localStorage.getItem('account'));
 
@@ -17,11 +15,9 @@ const Header = () => {
     <header className="header">
       <div className="header-left">
         <Link to="/form" className="header-left__heading">
-          {/* <Link to={`${pathname}form`} className="header-left__heading"> */}
           Form
         </Link>
         <Link to="/api" className="header-left__link">
-          {/* <Link to={`${pathname}api`} className="header-left__link"> */}
           API
         </Link>
       </div>
