@@ -4,7 +4,7 @@ import RegistrationPage from './pages/Authorization';
 import Landing from './components/UI/Landing/Landing';
 import ErrorPage from './pages/Error';
 import FormPage from './pages/Form';
-import ApiLayout, { loader } from './components/API/APILayout';
+import ApiLayout, { loader } from './pages/Api';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: 'api',
         element: <ApiLayout />,
-        loader: loader,
+        loader,
       },
     ],
   },
