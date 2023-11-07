@@ -25,13 +25,13 @@
       align-items: center;
 
       &:first-child {
-        width: $row-width;
+        width: 112vw;
         border-bottom: 1px solid $secondary;
         position: relative;
       }
 
       &:nth-child(2n) {
-        width: $row-width;
+        width: 112vw;
         background-color: #f6f6f6;
         position: relative;
       }
