@@ -17,7 +17,11 @@ const AuthorizationPage = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    if (imgCheck || nameInput.current.value === '') {
+    if (
+      imgCheck ||
+      nameInput.current.value === '' ||
+      nameInput.current.value.length > 10
+    ) {
       setAuthError(true);
       return;
     }
