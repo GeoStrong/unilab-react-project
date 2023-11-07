@@ -6,9 +6,7 @@ import ErrorPage from './pages/Error';
 import FormPage from './pages/Form';
 import ApiLayout, { loader } from './pages/Api';
 
-const basename = '/unilab-react-project';
-
-const initialHash = window.location.hash ? window.location.hash : '#/';
+const basename = '/unilab-react-project/#';
 
 const router = createHashRouter([
   {
@@ -38,11 +36,7 @@ const router = createHashRouter([
 ]);
 
 const App = () => (
-  <RouterProvider
-    router={router}
-    basename={basename}
-    initialEntries={[initialHash]}
-  ></RouterProvider>
+  <RouterProvider router={router} basename={basename}></RouterProvider>
 );
 
 export default App;
