@@ -11,6 +11,8 @@ const Pagination = ({ data }) => {
   const { activePage } = useSelector((state) => state.dataFilter);
   const pageAmount = Array.from(new Set(data.map((item) => item.page)));
 
+  const pageCheck = (pageIndex) => activePage === pageAmount.at(pageIndex);
+
   const onPageNumberClick = (event) => {
     dispatch(dataFilterActions.activePageHandler(+event.target.dataset.id));
   };
@@ -25,7 +27,7 @@ const Pagination = ({ data }) => {
 
   return (
     <div className={`pagination ${data.length === 0 ? 'hidden' : null}`}>
-      <div className="pagination__arrow">
+      <div className={`pagination__arrow ${pageCheck(0) ? 'hidden' : ''}  `}>
         <button
           className="pagination__button"
           data-action={-activePage + 1}
@@ -57,7 +59,7 @@ const Pagination = ({ data }) => {
           );
         })}
       </div>
-      <div className="pagination__arrow">
+      <div className={`pagination__arrow ${pageCheck(-1) ? 'hidden' : ''}  `}>
         <button
           className="pagination__button"
           data-action={1}
