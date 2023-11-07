@@ -1,14 +1,14 @@
-import {
-  RouterProvider,
-  // createBrowserRouter,
-  createHashRouter,
-} from 'react-router-dom';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
 import RouteLayout from './pages/Route';
 import RegistrationPage from './pages/Authorization';
 import Landing from './components/UI/Landing/Landing';
 import ErrorPage from './pages/Error';
 import FormPage from './pages/Form';
 import ApiLayout, { loader } from './pages/Api';
+
+const basename = '/unilab-react-project';
+
+const initialHash = window.location.hash ? window.location.hash : '#/';
 
 const router = createHashRouter([
   {
@@ -37,6 +37,12 @@ const router = createHashRouter([
   },
 ]);
 
-const App = () => <RouterProvider router={router}></RouterProvider>;
+const App = () => (
+  <RouterProvider
+    router={router}
+    basename={basename}
+    initialEntries={[initialHash]}
+  ></RouterProvider>
+);
 
 export default App;

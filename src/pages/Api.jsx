@@ -14,8 +14,6 @@ const ApiPage = () => {
     new Set(apiData.map((item) => Object.keys(item)).flat())
   );
 
-  console.log(navigation);
-
   return (
     <>
       <Header />
