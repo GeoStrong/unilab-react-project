@@ -5,6 +5,7 @@ import { popupActions } from '../../../store/popup';
 import closeImg from '../../../assets/img/close.svg';
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import FocusTrap from 'focus-trap-react';
 
 const Overlay = ({ overlayClickHandler }) => {
   return <div className="overlay-backdrop" onClick={overlayClickHandler}></div>;
@@ -16,22 +17,31 @@ const Modal = ({ overlayClickHandler }) => {
   const removeAccount = () => window.localStorage.removeItem('account');
 
   return (
-    <div className="modal">
-      <div className="modal-header">
-        <button onClick={overlayClickHandler} className="modal-header__button">
-          <img src={closeImg} alt="close" />
-        </button>
-      </div>
-      <main className="modal-main">
-        <h3 className="modal-main__name">{account?.name}</h3>
-        <div className="modal-main__profile">
-          <img src={account?.profile} alt="profile" />
+    <FocusTrap
+      focusTrapOptions={{
+        allowOutsideClick: true,
+      }}
+    >
+      <div className="modal">
+        <div className="modal-header">
+          <button
+            onClick={overlayClickHandler}
+            className="modal-header__button"
+          >
+            <img src={closeImg} alt="close" />
+          </button>
         </div>
-        <Link to="/" onClick={removeAccount} className="modal-main__button">
-          Sign Out
-        </Link>
-      </main>
-    </div>
+        <main className="modal-main">
+          <h3 className="modal-main__name">{account?.name}</h3>
+          <div className="modal-main__profile">
+            <img src={account?.profile} alt="profile" />
+          </div>
+          <Link to="/" onClick={removeAccount} className="modal-main__button">
+            Sign Out
+          </Link>
+        </main>
+      </div>
+    </FocusTrap>
   );
 };
 

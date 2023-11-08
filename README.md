@@ -23,6 +23,9 @@ Here are libraries and dependencies used in this project:
 - **React Accessible Accordion**:
   - [React Accessible Accordion GitHub Repository](https://github.com/springload/react-accessible-accordion)
   - Installation: `npm install --save react-accessible-accordion`
+- **Focus Trap React**:
+  - [Focus Trap React GitHub Repository](https://github.com/focus-trap/focus-trap-react)
+  - Installation: `npm install focus-trap-react`
 - **Node sass/scss**:
   - Installation: `npm install sass`
 
