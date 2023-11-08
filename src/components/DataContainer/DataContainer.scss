@@ -18,6 +18,7 @@
     overflow: scroll;
     background-color: $primary;
     border-radius: 10px;
+    position: relative;
 
     &__row {
       display: grid;
@@ -28,6 +29,13 @@
         width: 112vw;
         border-bottom: 1px solid $secondary;
         position: relative;
+
+        &::after {
+          content: url(../../assets/img/sort.svg);
+          position: absolute;
+          top: 42%;
+          left: 38.8%;
+        }
       }
 
       &:nth-child(2n) {
@@ -39,6 +47,7 @@
 
     &__value {
       padding: getSize(25) getSize(40);
+      font-family: Helvetica;
       color: $text-on-white;
       text-align: center;
       font-size: getSize(16);
