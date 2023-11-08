@@ -29,6 +29,7 @@
       cursor: pointer;
       background-color: $quaternary;
       overflow: hidden;
+      @include inputHover;
       @include flex;
 
       input {
@@ -49,10 +50,13 @@
       font-size: getSize(36);
       background: $quaternary;
       border: none;
+      border-radius: 10px;
 
       &::placeholder {
         color: #a5a5a5;
       }
+
+      @include inputHover;
     }
 
     &__button {

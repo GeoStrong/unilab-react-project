@@ -16,10 +16,12 @@
 
     &__heading {
       font-size: inherit;
+      @include linkHover;
     }
 
     &__link {
       font-size: inherit;
+      @include linkHover;
     }
   }
 

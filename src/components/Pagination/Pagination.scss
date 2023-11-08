@@ -24,6 +24,11 @@
     font-family: Montserrat;
     font-size: getSize(18);
     font-weight: 400;
+
+    &:hover,
+    &:focus {
+      color: darken($quaternary, 30%);
+    }
   }
 
   .active {
