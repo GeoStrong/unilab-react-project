@@ -8,7 +8,7 @@ Unilab React Project
 - [Libraries](#libraries)
 - [Installation](#installation)
 
-## Libraries
+## Live
 
 Live (https://geostrong.github.io/unilab-react-project/#/)
 
