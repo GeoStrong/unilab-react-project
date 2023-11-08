@@ -14,10 +14,16 @@ const AuthorizationForm = ({
         <h2 className="authorization-card__heading">Get Started</h2>
         <p className="authorization-card__description">add a photo</p>
         <label
+          tabIndex={1}
           htmlFor="profile"
           className={`authorization-card__label ${
             error && 'authorization__error'
           }`}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              document.getElementById('profile').click();
+            }
+          }}
         >
           <input
             type="file"

@@ -122,7 +122,6 @@ const FilterPopup = () => {
                 <input
                   type="checkbox"
                   defaultChecked={true}
-                  // checked={inputValue === '' ? true : false}
                   id="active"
                   onChange={inputFilterHandler}
                 />
@@ -133,7 +132,6 @@ const FilterPopup = () => {
                 <input
                   type="checkbox"
                   defaultChecked={true}
-                  // checked={inputValue === '' ? true : false}
                   id="inactive"
                   onChange={inputFilterHandler}
                 />
@@ -156,7 +154,6 @@ const FilterPopup = () => {
                 <input
                   type="checkbox"
                   defaultChecked={true}
-                  // checked={inputValue === '' ? true : false}
                   id="male"
                   onChange={inputFilterHandler}
                 />
@@ -167,7 +164,6 @@ const FilterPopup = () => {
                 <input
                   type="checkbox"
                   defaultChecked={true}
-                  // checked={inputValue === '' ? true : false}
                   id="female"
                   onChange={inputFilterHandler}
                 />

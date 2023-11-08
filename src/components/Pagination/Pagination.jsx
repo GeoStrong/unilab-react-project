@@ -18,15 +18,17 @@ const Pagination = ({ data }) => {
   };
 
   const onArrowClick = (event) => {
-    dispatch(
-      dataFilterActions.activePageHandler(
-        activePage + +event.target.parentElement.dataset.action
-      )
+    const target =
+      event.target.className === 'pagination__button'
+        ? event.target
+        : event.target.parentElement;
+    return dispatch(
+      dataFilterActions.activePageHandler(activePage + +target.dataset.action)
     );
   };
 
   return (
-    <div className={`pagination ${data.length === 0 ? 'hidden' : null}`}>
+    <div className={`pagination ${data.length === 0 ? 'hidden' : ''}`}>
       <div className={`pagination__arrow ${pageCheck(0) ? 'hidden' : ''}  `}>
         <button
           className="pagination__button"
