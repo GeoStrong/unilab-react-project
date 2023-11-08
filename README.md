@@ -10,7 +10,7 @@ Unilab React Project
 
 ## Live
 
-Live (https://geostrong.github.io/unilab-react-project/#/)
+[Live](https://geostrong.github.io/unilab-react-project/#/)
 
 ## Libraries
 
@@ -38,7 +38,7 @@ Here are libraries and dependencies used in this project:
 
 1. Navigate to the directory where you want to store the project:
 
-cd c:\users\...
+cd C:\Users\...
 
 2. Clone the repository:
 
